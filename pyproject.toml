@@ -1,0 +1,19 @@
+[project]
+name = "pbi-extractor"
+version = "0.1.0"
+description = "Export every table a Power BI report uses via the Pro-compatible REST API (no Premium/XMLA)"
+requires-python = ">=3.10"
+dependencies = ["msal>=1.24", "requests>=2.28"]
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=14"]
+
+[project.scripts]
+pbi-extract = "pbi_extractor.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["pbi_extractor"]
